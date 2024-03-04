@@ -8,7 +8,7 @@ Esta API REST fornece recursos para autenticação de usuários em um sistema. E
 - `@fastify/cookie`: Plugin para gerenciamento de cookies.
 - `@fastify/cors`: Plugin para permitir acesso à API de diferentes origens.
 - **Zod**: Biblioteca para validação de dados de entrada e saída.
-- **Prisma**: Ferramenta de ORM para gerenciamento de banco de dados.
+- **Prisma (SQLite)**: Ferramenta de ORM para gerenciamento de banco de dados.
 
 ### Funcionalidades
 
