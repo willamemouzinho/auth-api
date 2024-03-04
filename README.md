@@ -15,6 +15,7 @@ Esta API REST fornece recursos para autenticação de usuários em um sistema. E
 - Cadastro de usuário: Cria um novo usuário no sistema, retorna um token JWT e o armazena nos cookies do cliente.
 - Login: Autentica um usuário, retorna um token JWT e o armazena nos cookies do cliente.
 - Logout: Invalida o token JWT do usuário limpando o cookie com o token.
+- Rotas autenticadas: Rotas que só podem ser acessadas se os clientes estiverem autenticados.
 
 ### Requisitos
 
