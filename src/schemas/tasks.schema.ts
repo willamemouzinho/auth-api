@@ -1,7 +1,14 @@
 import { z } from 'zod'
 
-export const getTasksSchema = z.object({
+export const taskParamsSchema = z.object({
   id: z.string().uuid(),
 })
+export type GetTaskByIdParamsSchema = z.infer<typeof taskParamsSchema>
 
-export type GetTasksParamsSchema = z.infer<typeof getTasksSchema>
+export const addTaskSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+})
+export type AddTaskBodySchema = z.infer<typeof addTaskSchema>
+
+export type DeleteTaskByIdParamsSchema = z.infer<typeof taskParamsSchema>

@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify'
+
 import { authController } from '../controllers/auth/auth.controller'
 
 export async function authRoutes(app: FastifyInstance) {
@@ -7,7 +8,7 @@ export async function authRoutes(app: FastifyInstance) {
   app.post(
     '/logout',
     {
-      preHandler: [app.authenticate],
+      onRequest: [app.authenticate],
     },
     authController.logout
   )

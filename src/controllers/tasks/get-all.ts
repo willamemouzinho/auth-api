@@ -1,17 +1,19 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { prisma } from '../../utils/prisma'
-import { getTasksSchema } from '../../schemas/tasks.schema'
 
-export const getTasks = async (req: FastifyRequest, res: FastifyReply) => {
-  console.log('req.user', req.user)
+import { prisma } from '../../utils/prisma'
+
+export const getAll = async (req: FastifyRequest, res: FastifyReply) => {
   try {
     const tasks = await prisma.task.findMany({
       where: {
-        id: req.user.id,
+        userId: req.user.id,
+      },
+      select: {
+        id: true,
+        title: true,
+        description: true,
       },
     })
-
-    console.log('tasks', tasks)
 
     return res.code(200).send({ tasks })
   } catch (error) {

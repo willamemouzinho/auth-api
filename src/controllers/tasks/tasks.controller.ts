@@ -1,5 +1,11 @@
-import { getTasks } from './get-tasks.controller'
+import { add } from './add'
+import { deleteById } from './delete-by-id'
+import { getAll } from './get-all'
+import { getById } from './get-by-id'
 
 export const tasksController = {
-  getTasks,
+  getAll,
+  getById,
+  add,
+  deleteById,
 }
